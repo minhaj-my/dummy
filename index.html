@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development Guide</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+      }
+
+      #navbar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        background: #2c3e50;
+        padding: 20px;
+        overflow-y: auto;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+
+      #navbar header {
+        color: #ecf0f1;
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #3498db;
+      }
+
+      .nav-link {
+        display: block;
+        color: #ecf0f1;
+        text-decoration: none;
+        padding: 12px 15px;
+        margin: 8px 0;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        font-size: 0.95em;
+      }
+
+      .nav-link:hover {
+        background: #3498db;
+        padding-left: 20px;
+      }
+
+      #main-doc {
+        margin-left: 250px;
+        padding: 40px;
+        flex: 1;
+        background: #ecf0f1;
+      }
+
+      .main-section {
+        background: white;
+        margin-bottom: 30px;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .main-section header {
+        color: #2c3e50;
+        font-size: 2em;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #667eea;
+      }
+
+      p {
+        color: #34495e;
+        line-height: 1.8;
+        margin: 15px 0;
+        font-size: 1em;
+      }
+
+      code {
+        background: #f5f7fa;
+        border-left: 4px solid #667eea;
+        padding: 2px 8px;
+        font-family: "Courier New", monospace;
+        color: #e74c3c;
+        font-size: 0.9em;
+      }
+
+      .main-section code {
+        display: block;
+        padding: 15px;
+        margin: 15px 0;
+        overflow-x: auto;
+      }
+
+      ul {
+        margin: 20px 0 20px 30px;
+        color: #34495e;
+      }
+
+      li {
+        margin: 10px 0;
+        line-height: 1.6;
+      }
+
+      @media only screen and (max-width: 768px) {
+        body {
+          flex-direction: column;
+        }
+
+        #navbar {
+          position: relative;
+          width: 100%;
+          height: auto;
+          padding: 15px;
+          border-bottom: 2px solid #3498db;
+        }
+
+        #main-doc {
+          margin-left: 0;
+          padding: 20px;
+        }
+
+        .main-section {
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+
+        .main-section header {
+          font-size: 1.5em;
+        }
+
+        #navbar header {
+          margin-bottom: 15px;
+        }
+
+        .nav-link {
+          display: inline-block;
+          margin-right: 10px;
+          padding: 8px 12px;
+          font-size: 0.85em;
+        }
+
+        p {
+          font-size: 0.95em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Web Development Guide</header>
+      <a href="#Introduction" class="nav-link">Introduction</a>
+      <a href="#HTML_Basics" class="nav-link">HTML Basics</a>
+      <a href="#CSS_Styling" class="nav-link">CSS Styling</a>
+      <a href="#JavaScript_Fundamentals" class="nav-link"
+        >JavaScript Fundamentals</a
+      >
+      <a href="#Responsive_Design" class="nav-link">Responsive Design</a>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <p>
+          Welcome to the complete guide of modern web development. This
+          documentation covers the essential technologies and best practices you
+          need to know to build professional websites and applications.
+        </p>
+        <p>
+          Web development encompasses three core technologies: HTML for
+          structure, CSS for styling, and JavaScript for interactivity.
+          Understanding these fundamentals is crucial for any aspiring
+          developer.
+        </p>
+        <p>
+          The web development landscape continues to evolve rapidly with new
+          frameworks, tools, and methodologies emerging regularly. This guide
+          focuses on the timeless principles that remain constant across these
+          changes.
+        </p>
+        <p>
+          Throughout this documentation, you'll find practical examples, code
+          snippets, and best practices that will help you create efficient and
+          maintainable web applications.
+        </p>
+        <p>
+          Whether you're just starting your journey or looking to refresh your
+          knowledge, this resource will serve as a handy reference guide for
+          your web development endeavors.
+        </p>
+      </section>
+
+      <section class="main-section" id="HTML_Basics">
+        <header>HTML Basics</header>
+        <p>
+          HTML (HyperText Markup Language) is the foundation of all web pages.
+          It provides the semantic structure and content that browsers render as
+          visible web pages.
+        </p>
+        <p>
+          Every HTML document begins with a DOCTYPE declaration, which tells the
+          browser how to interpret the document. Modern web pages use the HTML5
+          DOCTYPE: <code>&lt;!DOCTYPE html&gt;</code>
+        </p>
+        <p>
+          The basic structure of an HTML document includes the html, head, and
+          body elements. The head contains metadata and links to stylesheets,
+          while the body contains the visible content.
+        </p>
+        <p>
+          Semantic HTML elements like <code>&lt;header&gt;</code>,
+          <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, and
+          <code>&lt;footer&gt;</code> provide meaning to both browsers and
+          developers about the content's purpose.
+        </p>
+        <p>
+          Proper use of heading elements (h1 through h6) creates a logical
+          hierarchy that helps with both accessibility and search engine
+          optimization.
+        </p>
+        <ul>
+          <li>Use semantic HTML elements to improve accessibility and SEO</li>
+          <li>
+            Always include proper meta tags for character encoding and viewport
+            settings
+          </li>
+          <li>
+            Keep HTML markup clean and well-organized with consistent
+            indentation
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="CSS_Styling">
+        <header>CSS Styling</header>
+        <p>
+          CSS (Cascading Style Sheets) is responsible for the visual
+          presentation of web pages. It allows you to control colors, layouts,
+          typography, and animations.
+        </p>
+        <p>
+          The cascade in CSS refers to how rules are applied based on
+          specificity and order. Understanding the cascade is essential for
+          writing maintainable stylesheets that don't cause unexpected styling
+          conflicts.
+        </p>
+        <p>
+          Flexbox is a powerful layout tool that simplifies creating flexible
+          and responsive designs. The <code>display: flex</code> property
+          enables flexible box layouts with intuitive alignment options.
+        </p>
+        <p>
+          CSS Grid provides a two-dimensional layout system that's perfect for
+          creating complex page layouts and component designs with rows and
+          columns.
+        </p>
+        <p>
+          Modern CSS also includes custom properties (variables) that make it
+          easier to maintain consistent styling across large projects and
+          implement theme switching functionality.
+        </p>
+        <ul>
+          <li>
+            Use CSS variables for consistent theming and easier maintenance
+          </li>
+          <li>Implement mobile-first responsive design with media queries</li>
+          <li>Leverage flexbox and grid for powerful layout capabilities</li>
+          <li>Organize CSS with a clear structure or methodology like BEM</li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="JavaScript_Fundamentals">
+        <header>JavaScript Fundamentals</header>
+        <p>
+          JavaScript is the programming language that brings interactivity to
+          web pages. It runs in the browser and can manipulate the DOM, handle
+          events, and communicate with servers.
+        </p>
+        <p>
+          Variables in JavaScript can be declared with <code>var</code>,
+          <code>let</code>, or <code>const</code>. Modern JavaScript prefers
+          <code>let</code> and <code>const</code> for better scoping and
+          immutability control.
+        </p>
+        <p>
+          Functions are reusable blocks of code that perform specific tasks.
+          Arrow functions provide a concise syntax for writing function
+          expressions in JavaScript.
+        </p>
+        <p>
+          The DOM (Document Object Model) represents the structure of a web page
+          as a tree of objects that JavaScript can access and manipulate to
+          create dynamic content.
+        </p>
+        <p>
+          Asynchronous programming with promises and async/await allows
+          JavaScript to handle time-consuming operations without blocking the
+          main thread.
+        </p>
+        <ul>
+          <li>Use meaningful variable names to make code more readable</li>
+          <li>Prefer arrow functions for callbacks and simple operations</li>
+          <li>
+            Always handle errors in asynchronous code with try/catch or .catch()
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Responsive_Design">
+        <header>Responsive Design</header>
+        <p>
+          Responsive design ensures that web applications work seamlessly across
+          devices of all sizes, from mobile phones to large desktop monitors.
+        </p>
+        <p>
+          A mobile-first approach starts by designing for mobile devices and
+          then progressively enhancing the experience for larger screens using
+          media queries and flexible layouts.
+        </p>
+        <p>
+          The viewport meta tag is essential for responsive design:
+          <code
+            >&lt;meta name="viewport" content="width=device-width,
+            initial-scale=1.0"&gt;</code
+          >
+        </p>
+        <p>
+          Media queries allow you to apply different CSS rules based on device
+          characteristics like screen width, enabling adaptive designs that
+          respond to the user's device.
+        </p>
+        <p>
+          Flexible grids, images, and media components are the foundation of
+          responsive design, allowing content to scale and adapt gracefully to
+          any screen size.
+        </p>
+        <ul>
+          <li>Design mobile-first and enhance for larger screens</li>
+          <li>
+            Use relative units like percentages and ems instead of fixed pixels
+          </li>
+          <li>
+            Test responsive designs on actual devices, not just browser
+            emulators
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
