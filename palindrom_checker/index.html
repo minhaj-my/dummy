@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="center">
+      <h1>💝 Palindrome Checker</h1>
+      <p class="subtitle">
+        Check if text reads the same forwards and backwards
+      </p>
+
+      <div class="input-group">
+        <label for="text-input">Enter text:</label>
+        <input
+          type="text"
+          id="text-input"
+          placeholder="Try 'race car' or 'A man, a plan, a canal: Panama'"
+        />
+      </div>
+
+      <div class="button-group">
+        <button id="check-btn">Check Palindrome</button>
+        <button class="clear-btn" onclick="clearAll()">Clear</button>
+      </div>
+
+      <div id="result"></div>
+
+      <div class="info">
+        <strong>💡 How it works:</strong>
+        <p>
+          This checker ignores punctuation, spaces, and capitalization when
+          testing your input.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function isPalindrome(str) {
+        const cleaned = str.replace(/[^a-z0-9]/gi, "").toLowerCase();
+        return cleaned === cleaned.split("").reverse().join("");
+      }
+
+      function checkPalindrom() {
+        const input = document.getElementById("text-input");
+        const result = document.getElementById("result");
+        const text = input.value.trim();
+
+        if (!text) {
+          alert("Please input a value");
+          return;
+        }
+        const palindrome = isPalindrome(text);
+        const message = `${text} is ${palindrome ? "a palindrome" : "not a palindrome"}`;
+        result.textContent = message;
+        result.classList.remove("not-palindrome", "palindrome");
+        result.classList.add(palindrome ? "palindrome" : "not-palindrome");
+      }
+
+      function clearAll() {
+        const input = document.getElementById("text-input");
+        const result = document.getElementById("result");
+        input.value = "";
+        result.textContent = "";
+        result.classList.remove("palindrome", "not-palindrome");
+        input.focus();
+      }
+
+      document
+        .getElementById("check-btn")
+        .addEventListener("click", checkPalindrom);
+
+      document
+        .getElementById("text-input")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            checkPalindrom();
+          }
+        });
+
+      document.getElementById("text-input").focus();
+    </script>
+  </body>
+</html>
