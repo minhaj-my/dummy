@@ -1,7 +1,4 @@
-# dummy
-
-# Dummy Project
-
+ 
 # Dummy Project
 
 A collection of web and Python projects for learning, experimentation, and automation. This repository contains various small projects including CSS experiments, PDF generation tools, mobile app prototypes, and AI SDK demos.
