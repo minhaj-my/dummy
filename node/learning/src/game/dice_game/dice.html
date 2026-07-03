@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Game</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0f0f0f;
+        font-family: "Courier New", monospace;
+      }
+
+      .card {
+        background: #1a1a1a;
+        border: 1px solid #2e2e2e;
+        border-radius: 12px;
+        padding: 48px 56px;
+        text-align: center;
+        width: 340px;
+      }
+
+      .dice-icon {
+        font-size: 64px;
+        margin-bottom: 24px;
+        display: block;
+        user-select: none;
+      }
+
+      h1 {
+        color: #f0f0f0;
+        font-size: 1.1rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        color: #555;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 36px;
+      }
+
+      #rollbtn {
+        background: #f0f0f0;
+        color: #0f0f0f;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 32px;
+        font-family: "Courier New", monospace;
+        font-size: 0.85rem;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition:
+          background 0.15s,
+          transform 0.1s;
+        width: 100%;
+      }
+
+      #rollbtn:hover {
+        background: #d4d4d4;
+      }
+      #rollbtn:active {
+        transform: scale(0.97);
+      }
+
+      #result {
+        margin-top: 28px;
+        min-height: 24px;
+        color: #888;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        transition: color 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <span class="dice-icon">🎲</span>
+      <h1>Dice Roll</h1>
+      <p class="subtitle">Roll a 6 to win</p>
+      <button id="rollbtn">Roll the Dice</button>
+      <p id="result"></p>
+    </div>
+    <script src="dice-p.js"></script>
+  </body>
+</html>

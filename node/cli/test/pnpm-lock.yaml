@@ -1,0 +1,17 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+overrides:
+  took: link:../../../.local/share/pnpm/global/5/node_modules/took
+  tool: link:../../../.local/share/pnpm/global/5/node_modules/tool
+
+importers:
+
+  .:
+    dependencies:
+      tool:
+        specifier: link:../../../.local/share/pnpm/global/5/node_modules/tool
+        version: link:../../../.local/share/pnpm/global/5/node_modules/tool

@@ -1,0 +1,3 @@
+overrides:
+  took: link:../../../.local/share/pnpm/global/5/node_modules/took
+  tool: link:../../../.local/share/pnpm/global/5/node_modules/tool
